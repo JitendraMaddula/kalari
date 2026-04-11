@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalari Village Bangalore | Ancient Healing</title>
+    
+    <!-- Favicon (Browser Tab Icon) -->
+    <link rel="icon" href="images/KALARI VILAGE BANGALORE-2.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Shared Styles */
+        :root { 
+            --primary-red: #ff0000; 
+            --dark-red: #8b0000; 
+            --bg-black: #080808; 
+            --glass: rgba(255, 255, 255, 0.05); 
+            --text-gray: #b0b0b0; 
+            --whatsapp-green: #25D366;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-black); color: white; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Orbitron', sans-serif; text-transform: uppercase; letter-spacing: 2px; }
+        
+        /* Navigation */
+        nav { padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(0, 0, 0, 0.9); position: fixed; width: 100%; z-index: 1000; border-bottom: 1px solid var(--dark-red); }
+        .nav-logo { font-family: 'Orbitron', sans-serif; color: white; text-decoration: none; font-weight: bold; display: flex; align-items: center;}
+        .logo-img { max-height: 55px; width: auto; display: block; margin-right: 15px; }
+        .logo-text { display: flex; flex-direction: column; justify-content: center; }
+        .brand-name { font-size: 1.5rem; line-height: 1.1; }
+        .brand-name span { color: var(--primary-red); }
+        .slogan { font-family: 'Poppins', sans-serif; font-size: 0.7rem; color: var(--text-gray); font-weight: 300; letter-spacing: 1px; text-transform: capitalize; margin-top: 2px;}
+
+        .nav-links { display: flex; align-items: center; }
+        .nav-links > a { color: white; text-decoration: none; margin-left: 25px; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links > a:hover { color: var(--primary-red); }
+
+        /* WhatsApp Nav Icon */
+        .nav-whatsapp {
+            color: var(--whatsapp-green) !important;
+            font-size: 1.6rem !important;
+            margin-left: 25px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        .nav-whatsapp:hover {
+            color: white !important;
+            text-shadow: 0 0 15px var(--whatsapp-green);
+            transform: scale(1.1);
+        }
+
+        .btn-red { background: var(--primary-red); color: white !important; padding: 10px 22px; text-decoration: none; display: inline-block; font-family: 'Orbitron'; font-size: 0.9rem; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; margin-left: 20px !important;}
+        .btn-red:hover { background: white; color: var(--primary-red) !important; box-shadow: 0 0 15px white; }
+        .btn-outline { border: 1px solid var(--text-gray); background: transparent; color: white !important; margin-left: 0 !important; }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); color: white !important; }
+        
+        section { padding: 120px 8% 80px; border-bottom: 1px solid #1a1a1a; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 2.5rem; }
+        .section-title span { color: var(--primary-red); }
+        
+        /* Inner Page Hero - Changed background to the stones/therapy screenshot */
+        .inner-hero {
+            height: 60vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), var(--bg-black)), url('images/Screenshot 2026-03-27 at 18.28.20.png') center/cover;
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 0 8% 60px;
+        }
+        .inner-hero h1 { font-size: 4rem; color: white; text-shadow: 0 0 20px var(--primary-red); }
+        
+        /* Flex Layouts */
+        .marma-flex { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; margin-top: 40px; }
+        .marma-content { flex: 1; min-width: 300px; }
+        .marma-content p { color: var(--text-gray); line-height: 1.8; font-size: 1.1rem; margin-bottom: 20px; }
+        .marma-list { list-style: none; margin-top: 20px; }
+        .marma-list li { margin-bottom: 15px; font-size: 1.1rem; color: white; }
+        .marma-list i { color: var(--primary-red); margin-right: 15px; }
+
+        .image-box { flex: 1; min-width: 300px; }
+        .image-box img { width: 100%; border-radius: 10px; border: 2px solid var(--primary-red); box-shadow: 0 0 30px rgba(255,0,0,0.1); }
+        
+        footer { text-align: center; padding: 30px; border-top: 1px solid #222; font-size: 0.9rem; color: #666; }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .inner-hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <img src="images/KALARI VILAGE BANGALORE-2.png" alt="Kalari Logo" class="logo-img">
+            <div class="logo-text">
+                <div class="brand-name">KALARI&nbsp;<span>VILLAGE BANGALORE</span></div>
+                <div class="slogan">The Traditional Way of a Warrior’s Journey</div>
+            </div>
+        </a>
+        
+        <div class="nav-links">
+            <a href="index.html" class="btn-red btn-outline"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            
+            <!-- WhatsApp Icon Link -->
+            <a href="https://wa.me/919876543210" target="_blank" class="nav-whatsapp" title="Chat on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <a href="https://forms.gle/DvUSug38idG6vunA9" target="_blank" class="btn-red">Book a Consultation</a>
+        </div>
+    </nav>
+
+    <header class="inner-hero">
+        <h1>Marma Chikitsa</h1>
+        <p style="color: var(--primary-red); font-size: 1.2rem; font-weight: bold; font-family: 'Orbitron';">THE ART OF HEALING AND VITAL POINTS</p>
+    </header>
+
+    <section>
+        <div class="marma-flex">
+            <div class="marma-content">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Restoring the <span style="color: var(--primary-red);">Prana</span></h2>
+                <p>In Kalari tradition, the practitioner who knows how to strike must also know how to heal. <strong>Marma Chikitsa</strong> is the ancient science of manipulating the 107 vital points (Marmas) in the human body where nerves, muscles, and energy pathways intersect.</p>
+                <p>Using specialized medicated oils, herbal pastes, and deep-tissue massage techniques (Uzhichil), we restore the flow of <em>Prana</em> (life force energy), aligning the skeletal structure and clearing nervous system blockages.</p>
+                
+                <ul class="marma-list">
+                    <li><i class="fas fa-check-circle"></i> <strong>Sports Injury Recovery:</strong> Treating sprains, muscle tears, and joint dislocations.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Chronic Pain Relief:</strong> Managing back pain, arthritis, and nerve compressions.</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Kalari Uzhichil:</strong> A traditional full-body massage to enhance flexibility and blood flow.</li>
+                </ul>
+            </div>
+            <div class="image-box">
+                <!-- Image changed to IMG_4103.jpg as requested -->
+                <img src="images/Screenshot 2026-03-27 at 18.28.20.png" alt="Kalari Practice">
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #050505; text-align: center;">
+        <h2 class="section-title">Heal from <span>Within</span></h2>
+        <p style="color: var(--text-gray); margin-bottom: 30px;">Do not let physical pain limit your potential. Connect with me to discuss a personalized treatment plan.</p>
+        <a href="https://forms.gle/DvUSug38idG6vunA9" target="_blank" class="btn-red" style="font-size: 1.2rem; padding: 15px 40px; margin-left: 0 !important;">Request a Consultation</a>
+    </section>
+
+    <footer>
+        <p>Copyright 2026 Kalari Village Bangalore All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

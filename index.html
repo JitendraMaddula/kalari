@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalari Village Bangalore | Ancient Energy, Modern Fitness</title>
+    
+    <!-- Favicon (Browser Tab Icon) -->
+    <link rel="icon" href="images/KALARI VILAGE BANGALORE-2.png" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS VARIABLES & GLOBAL STYLES --- */
+        :root {
+            --primary-red: #ff0000;
+            --dark-red: #8b0000;
+            --bg-black: #080808;
+            --glass: rgba(255, 255, 255, 0.05);
+            --text-gray: #b0b0b0;
+            --whatsapp-green: #25D366; /* WhatsApp Brand Color */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background-color: var(--bg-black); 
+            color: white; 
+            font-family: 'Poppins', sans-serif; 
+            scroll-behavior: smooth; 
+            overflow-x: hidden; 
+        }
+        
+        h1, h2, h3 { 
+            font-family: 'Orbitron', sans-serif; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+        }
+
+        /* --- PRELOADER ANIMATION --- */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #080808;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader-ring {
+            width: 80px;
+            height: 80px;
+            border: 5px solid rgba(255, 0, 0, 0.2);
+            border-top-color: #ff0000;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+
+        .loader-text {
+            color: #ff0000;
+            font-family: 'Orbitron', sans-serif;
+            margin-top: 20px;
+            letter-spacing: 3px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+        /* --- NAVIGATION --- */
+        nav { 
+            padding: 15px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: rgba(0, 0, 0, 0.9); 
+            position: fixed; 
+            width: 100%; 
+            z-index: 1000; 
+            border-bottom: 1px solid var(--dark-red); 
+        }
+        
+        /* Logo Styles */
+        .nav-logo { font-family: 'Orbitron', sans-serif; color: white; text-decoration: none; font-weight: bold; display: flex; align-items: center;}
+        .logo-img { max-height: 55px; width: auto; display: block; margin-right: 15px; }
+        .logo-text { display: flex; flex-direction: column; justify-content: center; }
+        .brand-name { font-size: 1.5rem; line-height: 1.1; }
+        .brand-name span { color: var(--primary-red); }
+        .slogan { font-family: 'Poppins', sans-serif; font-size: 0.7rem; color: var(--text-gray); font-weight: 300; letter-spacing: 1px; text-transform: capitalize; margin-top: 2px;}
+
+        .nav-links { display: flex; align-items: center; }
+        .nav-links > a { color: white; text-decoration: none; margin-left: 25px; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links > a:hover { color: var(--primary-red); }
+
+        /* --- WHATSAPP NAV ICON --- */
+        .nav-whatsapp {
+            color: var(--whatsapp-green) !important;
+            font-size: 1.6rem !important;
+            margin-left: 25px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        .nav-whatsapp:hover {
+            color: white !important;
+            text-shadow: 0 0 15px var(--whatsapp-green);
+            transform: scale(1.1);
+        }
+
+        /* --- BUTTONS --- */
+        .btn-red { 
+            background: var(--primary-red); 
+            color: white !important; 
+            padding: 10px 22px; 
+            text-decoration: none; 
+            display: inline-block; 
+            font-family: 'Orbitron'; 
+            font-size: 0.9rem; 
+            border: none; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            border-radius: 4px; 
+            margin-left: 20px !important;
+        }
+        .btn-red:hover { background: white; color: var(--primary-red) !important; box-shadow: 0 0 15px white; }
+        .btn-outline { border: 1px solid var(--primary-red); background: transparent; color: var(--primary-red) !important; margin-left: 0 !important;}
+        .btn-outline:hover { background: var(--primary-red); color: white !important; }
+
+        /* --- GENERAL SECTIONS --- */
+        section { padding: 100px 8%; border-bottom: 1px solid #1a1a1a; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 2.5rem; }
+        .section-title span { color: var(--primary-red); }
+        
+        .flex-container { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+        .flex-item { flex: 1; min-width: 300px; }
+        .text-content p { color: var(--text-gray); margin-bottom: 15px; line-height: 1.8; font-size: 1.1rem; }
+
+        /* --- HERO SECTION --- */
+        .hero { 
+            height: 100vh; 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('images/IMG_4103.png') center/cover; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+        }
+        .hero h1 { font-size: 4rem; text-shadow: 2px 2px 10px rgba(255,0,0,0.5); }
+        .hero p { color: var(--primary-red); font-weight: bold; letter-spacing: 4px; margin-top: 10px; margin-bottom: 30px; }
+
+        /* --- SLIDER STYLES --- */
+        .slider-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 2px solid var(--dark-red);
+            box-shadow: 0 0 30px rgba(255,0,0,0.15);
+        }
+        
+        .slides {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            width: 100%;
+        }
+        
+        .slide {
+            min-width: 100%;
+            height: 550px;
+            object-fit: cover;
+        }
+
+        .slider-btn { 
+            position: absolute; 
+            top: 50%; 
+            transform: translateY(-50%); 
+            background: rgba(0,0,0,0.7); 
+            color: var(--primary-red); 
+            border: none; 
+            font-size: 2rem; 
+            cursor: pointer; 
+            padding: 10px 15px; 
+            z-index: 10; 
+            transition: 0.3s; 
+        }
+        .slider-btn:hover { background: var(--primary-red); color: white; }
+        .prev { left: 0; }
+        .next { right: 0; }
+
+        .slider-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .dot.active { background: #ff0000; box-shadow: 0 0 10px #ff0000; }
+
+        /* --- TESTIMONIALS SECTION --- */
+        .testimonial-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .testimonial-left {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+        .video-thumbnail {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+        }
+        .video-thumbnail img {
+            width: 100%;
+            display: block;
+            border: 1px solid #333;
+            border-radius: 10px;
+        }
+        
+        .testimonial-right {
+            flex: 1;
+            min-width: 300px;
+        }
+        .testi-subtitle {
+            color: var(--text-gray);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .testi-slider-wrapper {
+            position: relative;
+            overflow: hidden;
+            padding-top: 50px;
+            margin-top: 20px;
+        }
+        .testi-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+        .testi-slide {
+            min-width: 100%;
+            padding: 0 10px;
+        }
+        .testi-card {
+            background: #f9f9f9;
+            color: #222;
+            border-radius: 12px;
+            padding: 50px 30px 30px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .testi-avatar {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--bg-black);
+            background: var(--bg-black);
+        }
+        .testi-role {
+            color: #888;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .testi-stars {
+            color: #ffc107;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        .testi-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            font-style: italic;
+            color: #333;
+        }
+        .testi-controls {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: flex-end;
+        }
+        .testi-controls button {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid #333;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .testi-controls button:hover {
+            background: var(--primary-red);
+            border-color: var(--primary-red);
+        }
+
+        /* --- SKILLS GRID --- */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 40px; }
+        .skill-tile { position: relative; border-radius: 10px; overflow: hidden; height: 350px; border: 1px solid #333; transition: 0.4s; display: block; text-decoration: none; }
+        .skill-tile img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .skill-overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; }
+        .skill-overlay h3 { color: white; }
+        .skill-overlay p { color: var(--primary-red); }
+        .skill-tile:hover img { transform: scale(1.05); }
+        .skill-tile:hover { border-color: var(--primary-red); box-shadow: 0 0 20px rgba(255,0,0,0.3); }
+
+        /* --- CONTACT SECTION --- */
+        .social-icons { display: flex; gap: 20px; margin-top: 15px; }
+        .social-icons a { font-size: 2rem; color: white; transition: 0.3s; }
+        .social-icons a:hover { color: var(--primary-red); transform: translateY(-3px); }
+        .social-icons a.whatsapp-icon:hover { color: var(--whatsapp-green); text-shadow: 0 0 15px var(--whatsapp-green); }
+        
+        .contact-box { background: var(--glass); padding: 30px; border-radius: 10px; }
+        
+        /* Contact Links */
+        .contact-link {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-link:hover {
+            color: var(--primary-red);
+        }
+
+        /* --- FOOTER --- */
+        footer { text-align: center; padding: 30px; border-top: 1px solid #222; font-size: 0.9rem; color: #666; }
+        
+        /* Mobile Adjustments */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } 
+            .slide { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader Screen -->
+    <div id="preloader">
+        <div class="loader-ring"></div>
+        <div class="loader-text">AWAKENING ENERGY...</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <img src="images/KALARI VILAGE BANGALORE-2.png" alt="Kalari Logo" class="logo-img">
+            <div class="logo-text">
+                <div class="brand-name">KALARI&nbsp;<span>VILLAGE BANGALORE</span></div>
+                <div class="slogan">The Traditional Way of a Warrior’s Journey</div>
+            </div>
+        </a>
+        
+        <div class="nav-links">
+            <a href="#about">Philosophy</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#disciplines">Practices</a>
+            <a href="#contact">Contact</a>
+            
+            <!-- WhatsApp Icon Link -->
+            <a href="https://wa.me/919876543210" target="_blank" class="nav-whatsapp" title="Chat on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            
+            <!-- Call Back Button -->
+            <a href="https://forms.gle/DvUSug38idG6vunA9" target="_blank" class="btn-red">Call Back</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>The Warrior's Path</h1>
+        <p>RECLAIM YOUR STRENGTH. ELEVATE YOUR MIND.</p>
+        <a href="#about" class="btn-red btn-outline">Explore the Tradition</a>
+    </section>
+
+    <!-- Deep Info About Kalari (Philosophy) -->
+    <section id="about">
+        <h2 class="section-title">Ancient Wisdom, <span>Modern Life</span></h2>
+        <div class="flex-container">
+            <div class="flex-item text-content">
+                <p>Kalaripayattu is far more than a system of combat; it is an ancient Indian Knowledge System rooted deeply in Siddha and Yogic traditions. For over two decades, I have preserved this heritage to help modern individuals build a fearless society.</p>
+                
+                <h3 style="color: var(--primary-red); margin: 20px 0 10px; font-size: 1.2rem;">Beyond Physical Defense</h3>
+                <p>Our training goes beyond strikes and weaponry. It is a transformative journey that instills essential life skills. By connecting physical dynamism with breath and inner stillness, we dissolve modern anxieties, stress, and physical stagnation.</p>
+                
+                <h3 style="color: var(--primary-red); margin: 20px 0 10px; font-size: 1.2rem;">Holistic Wellness & Marma</h3>
+                <p>Integrated with Ayurvedic principles and Marma (vital pressure points), our practice elevates your core energy. Whether you are seeking holistic wellness, spiritual clarity, or elite athletic conditioning, Kalaripayattu unlocks your ultimate human potential.</p>
+            </div>
+            <div class="flex-item">
+                <img src="images/Screenshot 2026-03-27 at 18.26.04.png" alt="Kalari Meditation & Focus" style="width: 100%; border-radius: 10px; border: 2px solid var(--primary-red); box-shadow: 0 0 20px rgba(255,0,0,0.2);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Auto-Sliding Image Gallery -->
+    <section id="gallery" style="background-color: #050505;">
+        <h2 class="section-title">Training <span>Grounds</span></h2>
+        <div class="slider-container">
+            <button class="slider-btn prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+            
+            <div class="slides" id="slideContainer">
+                <img src="https://images.unsplash.com/photo-1599408080693-0972688b1393?auto=format&fit=crop&q=80&w=1200" class="slide" alt="Weapon Training">
+                <img src="images/Screenshot 2026-03-27 at 18.21.52.png" class="slide" alt="Meipayattu Stretches">
+                <img src="images/Screenshot 2026-03-27 at 18.28.20.png" class="slide" alt="Marma Healing Therapy">
+                <img src="images/IMG_4103.png" class="slide" alt="Kids Kalari Training">
+            </div>
+
+            <button class="slider-btn next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+            <div class="slider-indicators" id="indicators"></div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="reviews" style="background-color: #111;">
+        <div class="testimonial-container">
+            
+            <!-- Left Side: Static Image -->
+            <div class="testimonial-left">
+                <div class="video-thumbnail">
+                    <img src="images/IMG_4103.png" alt="Kalari Team">
+                </div>
+            </div>
+
+            <!-- Right Side: Testimonials Slider -->
+            <div class="testimonial-right">
+                <span class="testi-subtitle">CLIENTS</span>
+                <h2 class="section-title" style="text-align: left; margin-bottom: 20px; font-size: 2.2rem; color: white;">Testimonials</h2>
+                <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 20px;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+                
+                <div class="testi-slider-wrapper">
+                    <div class="testi-slides" id="testiSlideContainer">
+                        
+                        <!-- Review Slide 1 -->
+                        <div class="testi-slide">
+                            <div class="testi-card">
+                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150&h=150" alt="Surya" class="testi-avatar">
+                                <h4 style="font-family: 'Poppins', sans-serif; font-size: 1.2rem; margin-bottom: 2px;">Surya</h4>
+                                <span class="testi-role">Actor</span>
+                                <div class="testi-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testi-text">"Watching Agasthyam's Kalaripayattu performance left me in awe—it made me sweat, inspired by its sheer power and energy."</p>
+                            </div>
+                        </div>
+
+                        <!-- Review Slide 2 -->
+                        <div class="testi-slide">
+                            <div class="testi-card">
+                                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=150&h=150" alt="Student" class="testi-avatar">
+                                <h4 style="font-family: 'Poppins', sans-serif; font-size: 1.2rem; margin-bottom: 2px;">Arjun</h4>
+                                <span class="testi-role">Fitness Enthusiast</span>
+                                <div class="testi-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testi-text">"The traditional training approach completely transformed my core strength. The Marma therapy helped heal a 5-year-old shoulder injury."</p>
+                            </div>
+                        </div>
+                        
+                        <!-- TO ADD MORE REVIEWS: Copy a complete <div class="testi-slide"> block from above and paste it right here! -->
+
+                    </div>
+                </div>
+                
+                <!-- Manual Controls for Testimonials -->
+                <div class="testi-controls">
+                    <button onclick="changeTestiSlide(-1)"><i class="fas fa-arrow-left"></i></button>
+                    <button onclick="changeTestiSlide(1)"><i class="fas fa-arrow-right"></i></button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Practices Section -->
+    <section id="disciplines">
+        <h2 class="section-title">Mastery <span>Gateways</span></h2>
+        <div class="skills-grid">
+            <a href="kalari.html" class="skill-tile">
+                <img src="images/Screenshot 2026-03-27 at 18.21.52.png" alt="Kalaripayattu">
+                <div class="skill-overlay">
+                    <h3>Combat & Self-Defense</h3>
+                    <p>Enter the Kalari <i class="fas fa-arrow-right"></i></p>
+                </div>
+            </a>
+            <a href="marma.html" class="skill-tile">
+                <img src="images/Screenshot 2026-03-27 at 18.28.20.png" alt="Marma">
+                <div class="skill-overlay">
+                    <h3>Marma & Wellness</h3>
+                    <p>Discover Healing <i class="fas fa-arrow-right"></i></p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact & Location -->
+    <section id="contact">
+        <h2 class="section-title">Locate & <span>Connect</span></h2>
+        <div class="flex-container">
+            <div class="flex-item contact-box text-content" style="border-left: 4px solid var(--primary-red);">
+                <h3>The Gurukulam</h3><br>
+                
+                <!-- Hyperlinked Phone Number -->
+                <p><i class="fas fa-phone" style="color:var(--primary-red); width:30px;"></i> 
+                    <a href="tel:+919876543210" class="contact-link">+91 98765 43210</a>
+                </p>
+                
+                <!-- Hyperlinked Email Address -->
+                <p><i class="fas fa-envelope" style="color:var(--primary-red); width:30px;"></i> 
+                    <a href="mailto:kalarivillagebangalore@gmail.com" class="contact-link">kalarivillagebangalore@gmail.com</a>
+                </p>
+                
+                <p><i class="fas fa-map-marker-alt" style="color:var(--primary-red); width:30px;"></i> 
+                    Kerala, South India <br>
+                    <a href="https://www.google.com/maps?q=Kerala,+India" target="_blank" style="color:var(--primary-red); font-size:0.95rem; margin-left: 35px; text-decoration: underline;">
+                        Open in Google Maps <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i>
+                    </a>
+                </p>
+                
+                <h3 style="margin-top: 40px;">Follow the Journey</h3>
+                
+                <div class="social-icons">
+                    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/kalarivillagebangalore/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61576535076349&sk=about_details" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@KalariVillageBangalore" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="flex-item contact-box" style="border-top: 4px solid var(--primary-red);">
+                <h3>Request a Callback</h3>
+                <p style="color: var(--text-gray); margin: 15px 0;">Whether you are looking for physical conditioning, spiritual grounding, or traditional Marma treatment, leave your details below.</p>
+                <a href="https://forms.gle/DvUSug38idG6vunA9" target="_blank" class="btn-red" style="width: 100%; text-align: center; font-size: 1.1rem; padding: 15px; margin-top: 20px; margin-left: 0 !important;">
+                    Fill the Callback Form <i class="fas fa-paper-plane" style="margin-left: 10px;"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright 2026 Kalari Village Bangalore All Rights Reserved.</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // 1. Preloader Logic
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => { preloader.style.display = 'none'; }, 500);
+            }, 800);
+        });
+
+        // 2. Slider Logic
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const slideContainer = document.getElementById('slideContainer');
+        const indicatorsContainer = document.getElementById('indicators');
+        let sliderInterval;
+
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            indicatorsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+
+        function updateDots() {
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentIndex].classList.add('active');
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            updateDots();
+            resetInterval();
+        }
+
+        function changeSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = slides.length - 1;
+            if (currentIndex >= slides.length) currentIndex = 0;
+            goToSlide(currentIndex);
+        }
+
+        function startInterval() {
+            sliderInterval = setInterval(() => changeSlide(1), 4000);
+        }
+
+        function resetInterval() {
+            clearInterval(sliderInterval);
+            startInterval();
+        }
+
+        startInterval();
+
+        // 3. Testimonial Slider Logic
+        let currentTestiIndex = 0;
+        const testiSlides = document.querySelectorAll('.testi-slide');
+        const testiContainer = document.getElementById('testiSlideContainer');
+
+        function changeTestiSlide(direction) {
+            currentTestiIndex += direction;
+            if (currentTestiIndex < 0) {
+                currentTestiIndex = testiSlides.length - 1;
+            } else if (currentTestiIndex >= testiSlides.length) {
+                currentTestiIndex = 0;
+            }
+            testiContainer.style.transform = `translateX(-${currentTestiIndex * 100}%)`;
+        }
+
+        setInterval(() => {
+            changeTestiSlide(1);
+        }, 6000);
+    </script>
+</body>
+</html>

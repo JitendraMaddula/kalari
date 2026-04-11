@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalari Village Bangalore | The Art of Combat</title>
+    
+    <!-- Favicon (Browser Tab Icon) -->
+    <link rel="icon" href="images/KALARI VILAGE BANGALORE-2.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Shared Styles */
+        :root { 
+            --primary-red: #ff0000; 
+            --dark-red: #8b0000; 
+            --bg-black: #080808; 
+            --glass: rgba(255, 255, 255, 0.05); 
+            --text-gray: #b0b0b0; 
+            --whatsapp-green: #25D366;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-black); color: white; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Orbitron', sans-serif; text-transform: uppercase; letter-spacing: 2px; }
+        
+        /* Navigation */
+        nav { padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(0, 0, 0, 0.9); position: fixed; width: 100%; z-index: 1000; border-bottom: 1px solid var(--dark-red); }
+        .nav-logo { font-family: 'Orbitron', sans-serif; color: white; text-decoration: none; font-weight: bold; display: flex; align-items: center;}
+        .logo-img { max-height: 55px; width: auto; display: block; margin-right: 15px; }
+        .logo-text { display: flex; flex-direction: column; justify-content: center; }
+        .brand-name { font-size: 1.5rem; line-height: 1.1; }
+        .brand-name span { color: var(--primary-red); }
+        .slogan { font-family: 'Poppins', sans-serif; font-size: 0.7rem; color: var(--text-gray); font-weight: 300; letter-spacing: 1px; text-transform: capitalize; margin-top: 2px;}
+
+        .nav-links { display: flex; align-items: center; }
+        .nav-links > a { color: white; text-decoration: none; margin-left: 25px; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links > a:hover { color: var(--primary-red); }
+
+        /* WhatsApp Nav Icon */
+        .nav-whatsapp {
+            color: var(--whatsapp-green) !important;
+            font-size: 1.6rem !important;
+            margin-left: 25px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        .nav-whatsapp:hover {
+            color: white !important;
+            text-shadow: 0 0 15px var(--whatsapp-green);
+            transform: scale(1.1);
+        }
+
+        .btn-red { background: var(--primary-red); color: white !important; padding: 10px 22px; text-decoration: none; display: inline-block; font-family: 'Orbitron'; font-size: 0.9rem; border: none; cursor: pointer; transition: 0.3s; border-radius: 4px; margin-left: 20px !important;}
+        .btn-red:hover { background: white; color: var(--primary-red) !important; box-shadow: 0 0 15px white; }
+        .btn-outline { border: 1px solid var(--text-gray); background: transparent; color: white !important; margin-left: 0 !important; }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); color: white !important; }
+        
+        section { padding: 120px 8% 80px; border-bottom: 1px solid #1a1a1a; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 2.5rem; }
+        .section-title span { color: var(--primary-red); }
+        
+        /* Inner Page Hero - Image updated here */
+        .inner-hero {
+            height: 60vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), var(--bg-black)), url('images/Screenshot 2026-03-27 at 18.21.52.png') center/cover;
+            display: flex; flex-direction: column; justify-content: flex-end; padding: 0 8% 60px;
+        }
+        .inner-hero h1 { font-size: 4rem; color: white; text-shadow: 0 0 20px var(--primary-red); }
+        
+        /* Grid Layouts */
+        .curriculum-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .stage-card { background: var(--glass); padding: 40px; border-radius: 10px; border-left: 4px solid var(--dark-red); transition: 0.4s; }
+        .stage-card:hover { transform: translateY(-10px); border-color: var(--primary-red); background: rgba(255,0,0,0.05); }
+        .stage-card h3 { color: white; margin-bottom: 15px; }
+        .stage-card p { color: var(--text-gray); line-height: 1.7; }
+        .stage-icon { font-size: 2.5rem; color: var(--primary-red); margin-bottom: 20px; }
+        
+        footer { text-align: center; padding: 30px; border-top: 1px solid #222; font-size: 0.9rem; color: #666; }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .inner-hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <img src="images/KALARI VILAGE BANGALORE-2.png" alt="Kalari Logo" class="logo-img">
+            <div class="logo-text">
+                <div class="brand-name">KALARI&nbsp;<span>VILLAGE BANGALORE</span></div>
+                <div class="slogan">The Traditional Way of a Warrior’s Journey</div>
+            </div>
+        </a>
+        
+        <div class="nav-links">
+            <a href="index.html" class="btn-red btn-outline"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            
+            <!-- WhatsApp Icon Link -->
+            <a href="https://wa.me/919876543210" target="_blank" class="nav-whatsapp" title="Chat on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <a href="https://forms.gle/DvUSug38idG6vunA9" target="_blank" class="btn-red">Join the Kalari</a>
+        </div>
+    </nav>
+
+    <header class="inner-hero">
+        <h1>Kalaripayattu</h1>
+        <p style="color: var(--primary-red); font-size: 1.2rem; font-weight: bold; font-family: 'Orbitron';">THE SCIENCE OF COMBAT & DISCIPLINE</p>
+    </header>
+
+    <section>
+        <h2 class="section-title">The Four <span>Stages</span></h2>
+        <p style="text-align: center; color: var(--text-gray); max-width: 800px; margin: 0 auto 50px;">Training in the traditional Northern style follows a strict hierarchy. A student must master their own body before they are permitted to wield a weapon.</p>
+        
+        <div class="curriculum-grid">
+            <div class="stage-card">
+                <i class="fas fa-child stage-icon"></i>
+                <h3>1. Meipayattu</h3>
+                <p><strong>Body Conditioning:</strong> The foundation of Kalari. Through vigorous stretches, kicks, and complex leaping movements, the student achieves ultimate flexibility, stamina, and neuromuscular coordination.</p>
+            </div>
+            <div class="stage-card">
+                <i class="fas fa-gavel stage-icon"></i>
+                <h3>2. Kolthari</h3>
+                <p><strong>Wooden Weapons:</strong> Once the body is mastered, students learn to channel their energy into wooden weapons. This includes the long stick (Kettukari), short stick (Muchan), and the curved Otta stick.</p>
+            </div>
+            <div class="stage-card">
+                <i class="fas fa-khanda stage-icon"></i>
+                <h3>3. Angathari</h3>
+                <p><strong>Metal Weapons:</strong> The lethal stage of training. Practitioners learn the precision and control required to wield swords, shields, spears, daggers, and the legendary flexible sword (Urumi).</p>
+            </div>
+            <div class="stage-card">
+                <i class="fas fa-hand-rock stage-icon"></i>
+                <h3>4. Verumkai</h3>
+                <p><strong>Bare-Hand Combat:</strong> The final stage. A master learns to defend against armed attacks using only their bare hands, utilizing locks, grapples, and strikes to vital Marma points.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #050505; text-align: center;">
+        <h2 class="section-title">Ready to <span>Begin?</span></h2>
+        <p style="color: var(--text-gray); margin-bottom: 30px;">Step into the Kalari. Whether for fitness, discipline, or martial mastery, your journey starts here.</p>
+        <a href="https://forms.gle/DvUSug38idG6vunA9" target="_blank" class="btn-red" style="font-size: 1.2rem; padding: 15px 40px; margin-left: 0 !important;">Request a Callback</a>
+    </section>
+
+    <footer>
+        <p>Copyright 2026 Kalari Village Bangalore All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
